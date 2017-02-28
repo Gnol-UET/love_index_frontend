@@ -1,0 +1,21 @@
+{
+  "name": "love_index_frontend",
+  "description": "love_index_frontend",
+  "main": "",
+  "authors": [
+    "Long <zzsushiboyzz@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Gnol-UET/love_index_frontend",
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "jquery": "^3.1.1"
+  }
+
+}
