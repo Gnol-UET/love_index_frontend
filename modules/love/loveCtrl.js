@@ -44,13 +44,11 @@ angular.module('loveModule')
                     'Content-Type': 'application/x-www-form-urlencoded' // Note the appropriate header
                 }
             }).then(function(response) {
-                console.log(response.data);
+
+                $scope.comment = angular.element(angular.element(response.data).find('p')[0]).text();
+                $scope.score = angular.element(response.data).find('span').parent().text();
                  });
-            // loveService.loveCalc(request)
-            //     .then(function (response) {
-            //         $scope.comment= response.data.comment;
-            //         $scope.score = response.data.score;
-            //     })
+
         }
 
 
