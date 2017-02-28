@@ -45,7 +45,7 @@ angular.module('loveModule')
                 }
             }).then(function(response) {
 
-                $scope.comment = angular.element(angular.element(response.data).find('p')[0]).text();
+                $scope.comment = angular.element(angular.element(response.data).find('p')[2]).text();
                 $scope.score = angular.element(response.data).find('span').parent().text();
                  });
 
