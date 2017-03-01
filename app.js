@@ -5,7 +5,8 @@ angular.module('app', ['ui.router',
     'ajaxModule',
     'plusModule',
     'todoModule',
-    'loveModule'
+    'loveModule',
+    'findLoverModule'
     ])
     .config(function ($stateProvider, $urlRouterProvider,$sceDelegateProvider ) {
         $sceDelegateProvider.resourceUrlWhitelist(['**']);

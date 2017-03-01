@@ -28,14 +28,7 @@ angular.module('loveModule')
                 partenaire: 9999,
                 lang: "en"
             };
-            // var url = "http://www.astrotheme.fr/partenaires/indice_rapide.php";
-            // $http({
-            //     method: 'JSONP',
-            //     url: url
-            // }).
-            // then(function(response) {
-            //     console.log(response.data)
-            // });
+
             $http({
                 url: 'https://cors-anywhere.herokuapp.com/http://www.astrotheme.fr/partenaires/indice_rapide.php',
                 method: 'POST',

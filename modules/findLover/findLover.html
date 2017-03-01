@@ -1,0 +1,29 @@
+<div>
+    <form name="formNhap">
+        Your name: <input type="text" name="name0" ng-model="user0.name" required>
+        <span ng-show="formNhap.name0.$error.required">Ten khong duoc trong</span>
+        <br>
+        Your day: <input type="number" name="day0" ng-model="user0.day" required>
+        <span ng-show="formNhap.day0.$error.required">Ngày khong duoc trong</span>
+
+        Your month: <input type="number" name="month0" ng-model="user0.month" required>
+        <span ng-show="formNhap.month0.$error.required">Tháng khong duoc trong</span>
+
+        Your year: <input type="number" name="year0" ng-model="user0.year" required>
+        <span ng-show="formNhap.year0.$error.required">Năm khong duoc trong</span>
+        <br>
+        <br>
+        Target year: <input type="number" name="year1" ng-model="targetYear" required>
+        <span ng-show="formNhap.year1.$error.required">Năm khong duoc trong</span>
+        <br>
+
+
+        <button ng-click="findLover()">Find lover</button>
+        <br>
+        <br>
+        <br>
+        <div ng-repeat="i in loveResult">{{i}}</div>
+
+
+    </form>
+</div>
