@@ -1,36 +1,39 @@
 <div>
+    Dùng để bói 2 người có hợp nhau không? Dont you dare?
+    <br><br>
     <form name="formNhap">
         Your name: <input type="text" name="name0" ng-model="user0.name" required>
-        <span ng-show="formNhap.name0.$error.required">Ten khong duoc trong</span>
+        <span ng-show="formNhap.name0.$error.required" style="color: red">Tên không được trống</span>
         <br>
         Your day: <input type="number" name="day0" ng-model="user0.day" required>
-        <span ng-show="formNhap.day0.$error.required">Ngày khong duoc trong</span>
+        <span ng-show="formNhap.day0.$error.required" style="color: red">Ngày không được trống</span>
 
         Your month: <input type="number" name="month0" ng-model="user0.month" required>
-        <span ng-show="formNhap.month0.$error.required">Tháng khong duoc trong</span>
+        <span ng-show="formNhap.month0.$error.required" style="color: red">Tháng không được trống</span>
 
         Your year: <input type="number" name="year0" ng-model="user0.year" required>
-        <span ng-show="formNhap.year0.$error.required">Năm khong duoc trong</span>
+        <span ng-show="formNhap.year0.$error.required" style="color: red">Năm không được trống</span>
         <br>
 
         His/her name: <input type="text" name="name1" ng-model="user1.name" required>
-        <span ng-show="formNhap.name1.$error.required">Ten khong duoc trong</span>
+        <span ng-show="formNhap.name1.$error.required" style="color: red">Tên không được trống</span>
         <br>
         His/her day: <input type="number" name="day1" ng-model="user1.day" required>
-        <span ng-show="formNhap.day1.$error.required">Ngày khong duoc trong</span>
+        <span ng-show="formNhap.day1.$error.required" style="color: red">Ngày không được trống</span>
 
         His/her month: <input type="number" name="month1" ng-model="user1.month" required>
-        <span ng-show="formNhap.month1.$error.required">Tháng khong duoc trong</span>
+        <span ng-show="formNhap.month1.$error.required" style="color: red">Tháng không được trống</span>
 
         His/her year: <input type="number" name="year1" ng-model="user1.year" required>
-        <span ng-show="formNhap.year1.$error.required">Năm khong duoc trong</span>
+        <span ng-show="formNhap.year1.$error.required" style="color: red">Năm không được trống</span>
         <br>
         <button ng-click="calc()">Calculate</button>
         <br>
         <br>
         <br>
-        Result: {{comment}}
+        <div style="font-size: 30px; color: deepskyblue">Result: {{comment}}</div>
         <br>
-        Score: {{score}}
+        <div style="font-size: 40px; color: orangered">Score: {{score}}</div>
+
     </form>
 </div>
