@@ -10,7 +10,7 @@ angular.module('app', ['ui.router',
     ])
     .config(function ($stateProvider, $urlRouterProvider,$sceDelegateProvider ) {
         $sceDelegateProvider.resourceUrlWhitelist(['**']);
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/love');
         $stateProvider
         // nested list with custom controller
             .state('home', { //Định nghĩa 1 state
