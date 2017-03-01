@@ -12,11 +12,13 @@ angular.module('findLoverModule')
         var i = 0, j = 0;
 
         $scope.findLover = function () {
+            $scope.loveResult = [];
             for (var i = 0; i < 12; i++) {
                 for (var j = 0; j < 31; j++) {
                     calc(i, j);
                 }
             }
+
         };
         var calc = function (i, j) {
 
@@ -44,9 +46,10 @@ angular.module('findLoverModule')
             }).then(function (response) {
                 var day = j +1;
                 var month = i +1;
-                var str = "Month: " + month + " Day: "+ day +
+                var str = "Month: " + month + " Day: "+ day +  " Year: "+$scope.targetYear+
                     " ---- Score: " + angular.element(response.data).find('span').parent().text();
                 $scope.loveResult.push(str);
+                if(i==11 && j == 30) $scope.loveResult.push("Done");
             }).catch(function (response) {
                 calc(i,j);
                 var day = j +1;
