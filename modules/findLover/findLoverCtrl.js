@@ -10,22 +10,26 @@ angular.module('findLoverModule')
         $scope.loveResult = [];
         $scope.targetYear ;
         $scope.savedTargetYear  ;
+        $scope.check = false;
         var i = 0, j = 0;
         var getMonth = function(monthStr){
             return new Date(monthStr+'-1-01').getMonth()+1
         };
         $scope.findLover = function () {
+            if($scope.check == false){
+                $scope.check = true;
+            }
             $scope.loveResult = [];
-            $scope.savedTargetYear  = $scope.targetYear ;
             for (var i = 0; i < 12; i++) {
                 for (var j = 0; j < 31; j++) {
                     calc(i, j);
                 }
             }
 
+
         };
         var calc = function (i, j) {
-
+            $scope.targetYear = $scope.savedTargetYear - 1900;
             $scope.user0.month = getMonth($scope.date0.toDateString().substring(4,7));
             $scope.user0.day = parseInt($scope.date0.toDateString().substring(8,10));
             if(parseInt($scope.date0.toDateString().substring(11,15)) <2000 ){
@@ -35,7 +39,7 @@ angular.module('findLoverModule')
                 $scope.user0.year = parseInt($scope.date0.toDateString().substring(13,15));
                 $scope.user0.year = $scope.user0.year + 100;
             }
-            $scope.targetYear = $scope.savedTargetYear - 1900;
+
 
 
             var request = {
@@ -65,7 +69,10 @@ angular.module('findLoverModule')
                 var str = "Month: " + month + " Day: "+ day +  " Year: "+$scope.targetYear+
                     " ---- Score: " + angular.element(response.data).find('span').parent().text();
                 $scope.loveResult.push(str);
-                if(i==11 && j == 30) $scope.loveResult.push("Done");
+                if(i==11 && j == 30) {
+                    $scope.loveResult.push("Done");
+                    $scope.check = false;
+                }
             }).catch(function (response) {
                 calc(i,j);
                 var day = j +1;

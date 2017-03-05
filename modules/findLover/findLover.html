@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <form name="formNhap">
-                        Target year: <input placeholder="1996" type="number" name="year1" ng-model="targetYear" required>
+                        Target year: <input placeholder="1996" type="number" name="year1" ng-model="savedTargetYear" required>
                         <br>
                         <span ng-show="formNhap.year1.$error.required" style="color: #ffba16">Your target year must be filled</span>
                         <br>
@@ -25,9 +25,9 @@
             <br>
             <div class="row">
                 <div style="margin: 0 auto; text-align: center;">
-                    <button ng-disabled="formNhap.$invalid"
+                    <button ng-disabled="formNhap.$invalid || check == true"
                             class="btn btn-primary btn-lg"
-                            type="button" ng-click="findLover()">Find Lover </button>
+                            type="button" ng-click="findLover()" >Find Lover </button>
                 </div>
             </div>
             <br>
