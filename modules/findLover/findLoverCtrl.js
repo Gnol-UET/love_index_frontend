@@ -2,17 +2,21 @@ angular.module('findLoverModule')
     .controller('findLoverController', function ($scope, $http, $httpParamSerializerJQLike) {
         $scope.hello = 'Hello'; //Xử lý logic ở đây
         $scope.user0 = {
-            "name": "Long",
+            "name": "",
             "day": 15,
             "month": 11,
             "year": 96
         };
         $scope.loveResult = [];
-        $scope.targetYear = "";
+        $scope.targetYear ;
+        $scope.savedTargetYear  ;
         var i = 0, j = 0;
-
+        var getMonth = function(monthStr){
+            return new Date(monthStr+'-1-01').getMonth()+1
+        };
         $scope.findLover = function () {
             $scope.loveResult = [];
+            $scope.savedTargetYear  = $scope.targetYear ;
             for (var i = 0; i < 12; i++) {
                 for (var j = 0; j < 31; j++) {
                     calc(i, j);
@@ -21,6 +25,18 @@ angular.module('findLoverModule')
 
         };
         var calc = function (i, j) {
+
+            $scope.user0.month = getMonth($scope.date0.toDateString().substring(4,7));
+            $scope.user0.day = parseInt($scope.date0.toDateString().substring(8,10));
+            if(parseInt($scope.date0.toDateString().substring(11,15)) <2000 ){
+                $scope.user0.year = parseInt($scope.date0.toDateString().substring(13,15));
+            }
+            if(parseInt($scope.date0.toDateString().substring(11,15)) >=2000 ){
+                $scope.user0.year = parseInt($scope.date0.toDateString().substring(13,15));
+                $scope.user0.year = $scope.user0.year + 100;
+            }
+            $scope.targetYear = $scope.savedTargetYear - 1900;
+
 
             var request = {
                 "rapide_prenom[0]": $scope.user0.name,

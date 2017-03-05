@@ -1,33 +1,43 @@
-<div>
-    Dùng để liệt kê bạn hợp với ai sinh năm sau ?
-    <br><br>
-    <form name="formNhap">
-        Target year: <input type="number" name="year1" ng-model="targetYear" required>
-        <span ng-show="formNhap.year1.$error.required" style="color: red">Năm không được trống</span>
-        <br>
-
-        Your name: <input type="text" name="name0" ng-model="user0.name" required>
-        <span ng-show="formNhap.name0.$error.required" style="color: red">Tên không được trống</span>
-        <br>
-        Your day: <input type="number" name="day0" ng-model="user0.day" required>
-        <span ng-show="formNhap.day0.$error.required" style="color: red">Ngày không được trống</span>
-
-        Your month: <input type="number" name="month0" ng-model="user0.month" required>
-        <span ng-show="formNhap.month0.$error.required" style="color: red">Tháng không được trống</span>
-
-        Your year: <input type="number" name="year0" ng-model="user0.year" required>
-        <span ng-show="formNhap.year0.$error.required" style="color: red">Năm không được trống</span>
-        <br>
-        <br>
+<div class="container post">
+    <div class="row">
+        <div class="col-md-6 post-title">
+            <h1>Find Lover</h1>
+            <p class="text-muted">Dùng để liệt kê bạn hợp với ai sinh năm sau ? </p>
+        </div>
+        <div class="col-md-6 col-md-offset-0 post-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form name="formNhap">
+                        Target year: <input placeholder="1996" type="number" name="year1" ng-model="targetYear" required>
+                        <br>
+                        <span ng-show="formNhap.year1.$error.required" style="color: #ffba16">Your target year must be filled</span>
+                        <br>
+                        <input placeholder="Your name" class="form-control" type="text" name="name0" ng-model="user0.name" required>
+                        <span ng-show="formNhap.name0.$error.required" style="color: #ffba16">Your name must be filled</span>
+                        <input  class="form-control input-lg" type="date" required="" min="1950-01-01" max="2050-01-01" ng-model="date0" name="date0">
+                        <span ng-show="formNhap.date0.$error.required" style="color: #ffba16">Your DOB must be filled</span>
 
 
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div style="margin: 0 auto; text-align: center;">
+                    <button ng-disabled="formNhap.$invalid"
+                            class="btn btn-primary btn-lg"
+                            type="button" ng-click="findLover()">Find Lover </button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
 
-        <button ng-click="findLover()">Find lover</button>
-        <br>
-        <br>
-        <br>
-        <div ng-repeat="i in loveResult">{{i}}</div>
-
-
-    </form>
+                <br>
+                <br>
+                <div ng-repeat="i in loveResult">{{i}}</div>
+            </div>
+        </div>
+    </div>
 </div>
