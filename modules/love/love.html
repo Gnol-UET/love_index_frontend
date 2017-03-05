@@ -2,30 +2,20 @@
     Dùng để bói 2 người có hợp nhau không? Dont you dare?
     <br><br>
     <form name="formNhap">
+
         Your name: <input type="text" name="name0" ng-model="user0.name" required>
         <span ng-show="formNhap.name0.$error.required" style="color: red">Tên không được trống</span>
         <br>
-        Your day: <input type="number" name="day0" ng-model="user0.day" required>
-        <span ng-show="formNhap.day0.$error.required" style="color: red">Ngày không được trống</span>
+        Your date: <input class="form-control input-lg" type="date" required="" ng-model="date0" name="date0">
+        <span ng-show="formNhap.date0.$error.required" style="color: red">Ngày không được trống</span>
 
-        Your month: <input type="number" name="month0" ng-model="user0.month" required>
-        <span ng-show="formNhap.month0.$error.required" style="color: red">Tháng không được trống</span>
-
-        Your year: <input type="number" name="year0" ng-model="user0.year" required>
-        <span ng-show="formNhap.year0.$error.required" style="color: red">Năm không được trống</span>
         <br>
-
         His/her name: <input type="text" name="name1" ng-model="user1.name" required>
         <span ng-show="formNhap.name1.$error.required" style="color: red">Tên không được trống</span>
         <br>
-        His/her day: <input type="number" name="day1" ng-model="user1.day" required>
-        <span ng-show="formNhap.day1.$error.required" style="color: red">Ngày không được trống</span>
+        His/her date: <input class="form-control input-lg" type="date" required="" ng-model="date1" name="date1">
+        <span ng-show="formNhap.date1.$error.required" style="color: red">Ngày không được trống</span>
 
-        His/her month: <input type="number" name="month1" ng-model="user1.month" required>
-        <span ng-show="formNhap.month1.$error.required" style="color: red">Tháng không được trống</span>
-
-        His/her year: <input type="number" name="year1" ng-model="user1.year" required>
-        <span ng-show="formNhap.year1.$error.required" style="color: red">Năm không được trống</span>
         <br>
         <button ng-click="calc()">Calculate</button>
         <br>
