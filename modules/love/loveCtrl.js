@@ -57,7 +57,7 @@ angular.module('loveModule')
             };
 
             $http({
-                url: 'http://www.astrotheme.fr/partenaires/indice_rapide.php',
+                url: 'https://cors-anywhere.herokuapp.com/http://www.astrotheme.fr/partenaires/indice_rapide.php',
                 method: 'POST',
                 data: $httpParamSerializerJQLike(request), // Make sure to inject the service you choose to the controller
                 headers: {
