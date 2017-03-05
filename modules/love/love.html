@@ -1,29 +1,71 @@
-<div>
-    Dùng để bói 2 người có hợp nhau không? Dont you dare?
-    <br><br>
-    <form name="formNhap">
+<div class="container post">
+    <div class="row">
+        <div class="col-md-6 post-title">
+            <h1>Love Index</h1>
+            <p class="text-muted">Dùng để bói 2 người có hợp nhau không? Dont you dare? </p>
+        </div>
+        <div class="col-md-6 col-md-offset-0 post-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form name="formNhap">
+                        <input placeholder="Your name" class="form-control" type="text" name="name0" ng-model="user0.name" required>
+                        <span ng-show="formNhap.name0.$error.required" style="color: #ffba16">Your name must be filled</span>
+                        <input  class="form-control input-lg" type="date" required="" min="1950-01-01" max="2050-01-01" ng-model="date0" name="date0">
+                        <span ng-show="formNhap.date0.$error.required" style="color: #ffba16">Your DOB must be filled</span>
 
-        Your name: <input type="text" name="name0" ng-model="user0.name" required>
-        <span ng-show="formNhap.name0.$error.required" style="color: red">Tên không được trống</span>
-        <br>
-        Your date: <input class="form-control input-lg" type="date" required="" ng-model="date0" name="date0">
-        <span ng-show="formNhap.date0.$error.required" style="color: red">Ngày không được trống</span>
-
-        <br>
-        His/her name: <input type="text" name="name1" ng-model="user1.name" required>
-        <span ng-show="formNhap.name1.$error.required" style="color: red">Tên không được trống</span>
-        <br>
-        His/her date: <input class="form-control input-lg" type="date" required="" ng-model="date1" name="date1">
-        <span ng-show="formNhap.date1.$error.required" style="color: red">Ngày không được trống</span>
-
-        <br>
-        <button ng-click="calc()">Calculate</button>
-        <br>
-        <br>
-        <br>
-        <div style="font-size: 30px; color: deepskyblue">Result: {{comment}}</div>
-        <br>
-        <div style="font-size: 40px; color: orangered">Score: {{score}}</div>
-
-    </form>
+                        <input placeholder="His/Her name" class="form-control" type="text" name="name1" ng-model="user1.name" required>
+                        <span ng-show="formNhap.name1.$error.required" style="color: #ffba16">His/Her name must be filled</span>
+                        <input class="form-control input-lg" type="date" required="" min="1950-01-01" max="2050-01-01" ng-model="date1" name="date1">
+                        <span ng-show="formNhap.date1.$error.required" style="color: #ffba16">His/Her DOB must be filled</span>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div style="margin: 0 auto; text-align: center;">
+                    <button ng-disabled="formNhap.$invalid"
+                            class="btn btn-primary btn-lg"
+                            type="button" ng-click="calc()">Calculate </button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <p style=" color: deepskyblue">{{comment}}</p>
+                    <p style=" color: orangered; font-size: 27px">{{score}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!--<div>-->
+    <!--Dùng để bói 2 người có hợp nhau không? Dont you dare?-->
+    <!--<br><br>-->
+    <!--<form name="formNhap">-->
+
+        <!--Your name: <input type="text" name="name0" ng-model="user0.name" required>-->
+        <!--<span ng-show="formNhap.name0.$error.required" style="color: red">Tên không được trống</span>-->
+        <!--<br>-->
+        <!--Your date: <input class="form-control input-lg" type="date" required="" ng-model="date0" name="date0">-->
+        <!--<span ng-show="formNhap.date0.$error.required" style="color: red">Ngày không được trống</span>-->
+
+        <!--<br>-->
+        <!--His/her name: <input type="text" name="name1" ng-model="user1.name" required>-->
+        <!--<span ng-show="formNhap.name1.$error.required" style="color: red">Tên không được trống</span>-->
+        <!--<br>-->
+        <!--His/her date: <input class="form-control input-lg" type="date" required="" ng-model="date1" name="date1">-->
+        <!--<span ng-show="formNhap.date1.$error.required" style="color: red">Ngày không được trống</span>-->
+
+        <!--<br>-->
+        <!--<button ng-click="calc()">Calculate</button>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<div style="font-size: 30px; color: deepskyblue">Result: {{comment}}</div>-->
+        <!--<br>-->
+        <!--<div style="font-size: 40px; color: orangered">Score: {{score}}</div>-->
+
+    <!--</form>-->
+<!--</div>-->

@@ -65,8 +65,8 @@ angular.module('loveModule')
                 }
             }).then(function(response) {
 
-                $scope.comment = angular.element(angular.element(response.data).find('p')[2]).text();
-                $scope.score = angular.element(response.data).find('span').parent().text();
+                $scope.comment = "Result: "+angular.element(angular.element(response.data).find('p')[2]).text();
+                $scope.score = "Score: "+ angular.element(response.data).find('span').parent().text();
                  });
 
         }
