@@ -57,7 +57,7 @@ angular.module('loveModule')
             };
 
             $http({
-                url: 'https://love-index-be.herokuapp.com/=',
+                url: 'https://love-index-be.herokuapp.com',
                 method: 'POST',
                 data: $httpParamSerializerJQLike(request), // Make sure to inject the service you choose to the controller
                 headers: {
