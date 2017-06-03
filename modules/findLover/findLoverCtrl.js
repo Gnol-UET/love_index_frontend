@@ -57,7 +57,7 @@ angular.module('findLoverModule')
 
             $http({
 
-                url: 'https://love-index-be.herokuapp.com',
+                url: 'https://thawing-lake-86928.herokuapp.com/https://www.astrotheme.fr/partenaires/indice_rapide.php',
                 method: 'POST',
                 data: $httpParamSerializerJQLike(request), // Make sure to inject the service you choose to the controller
                 headers: {

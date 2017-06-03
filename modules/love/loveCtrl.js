@@ -43,30 +43,30 @@ angular.module('loveModule')
                 $scope.user1.year = $scope.user1.year + 100;
             }
             var request = {
-                "rapide_prenom[0]" : $scope.user0.name,
-                "rapide_prenom[1]" : $scope.user1.name,
-                "rapide_jour[0]" : $scope.user0.day-1,
-                "rapide_jour[1]" : $scope.user1.day-1,
-                "rapide_mois[0]" : $scope.user0.month-1,
-                "rapide_mois[1]" : $scope.user1.month-1,
-                "rapide_annee[0]" : $scope.user0.year,
-                "rapide_annee[1]" : $scope.user1.year,
-                "date1" : $scope.date1,
-                partenaire: 9999,
-                lang: "en"
+                "name0" : $scope.user0.name,
+                "name1" : $scope.user1.name,
+                "day0" : $scope.user0.day,
+                "day1" : $scope.user1.day,
+                "month0" : $scope.user0.month,
+                "month1" : $scope.user1.month,
+                "year0" : $scope.user0.year,
+                "year1" : $scope.user1.year
             };
 
             $http({
                 url: 'https://love-index-be.herokuapp.com',
                 method: 'POST',
-                data: $httpParamSerializerJQLike(request), // Make sure to inject the service you choose to the controller
+                // data: $httpParamSerializerJQLike(request), // Make sure to inject the service you choose to the controller
+                data: request, // Make sure to inject the service you choose to the controller
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded' // Note the appropriate header
+                    'Content-Type': 'application/json' // Note the appropriate header
                 }
             }).then(function(response) {
 
-                $scope.comment = "Result: "+angular.element(angular.element(response.data).find('p')[2]).text();
-                $scope.score = "Score: "+ angular.element(response.data).find('span').parent().text();
+                // $scope.comment = "Result: "+angular.element(angular.element(response.data).find('p')[2]).text();
+                // $scope.score = "Score: "+ angular.element(response.data).find('span').parent().text();
+                $scope.comment = "Result: "+response.data.comment;
+                $scope.score= "Score: "+response.data.score +"%";
                  });
 
         }
