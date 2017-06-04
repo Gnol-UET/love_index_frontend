@@ -1,5 +1,5 @@
 angular.module('findLoverModule')
-    .controller('findLoverController', function ($scope, $http, $httpParamSerializerJQLike) {
+    .controller('findLoverController', function ($scope, cfpLoadingBar,$http, $httpParamSerializerJQLike) {
         $scope.hello = 'Hello'; //Xử lý logic ở đây
         $scope.user0 = {
             "name": "",
@@ -16,6 +16,7 @@ angular.module('findLoverModule')
             return new Date(monthStr+'-1-01').getMonth()+1
         };
         $scope.findLover = function () {
+            cfpLoadingBar.start();
             if($scope.check == false){
                 $scope.check = true;
             }
@@ -72,6 +73,7 @@ angular.module('findLoverModule')
                 if(i==11 && j == 30) {
                     $scope.loveResult.push("Done");
                     $scope.check = false;
+                    cfpLoadingBar.complete();
                 }
             }).catch(function (response) {
                 calc(i,j);

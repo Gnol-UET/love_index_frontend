@@ -1,5 +1,5 @@
 angular.module('loveModule')
-    .controller('loveController', function ($scope, loveService, $http, $httpParamSerializerJQLike) {
+    .controller('loveController', function ($scope, loveService, cfpLoadingBar,$http, $httpParamSerializerJQLike) {
         $scope.comment = '';//Xử lý logic ở đây
         $scope.score='';
         $scope.date0 = '';
@@ -21,6 +21,7 @@ angular.module('loveModule')
         };
 
         $scope.calc = function () {
+            cfpLoadingBar.start();
             $scope.user0.month = getMonth($scope.date0.toDateString().substring(4,7));
             $scope.user0.day = parseInt($scope.date0.toDateString().substring(8,10));
             if(parseInt($scope.date0.toDateString().substring(11,15)) <2000 ){

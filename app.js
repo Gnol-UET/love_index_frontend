@@ -7,7 +7,8 @@ angular.module('app', ['ui.router',
     'todoModule',
     'loveModule',
     'findLoverModule',
-    'contactModule'
+    'contactModule',
+    'angular-loading-bar'
     ])
     .config(function ($stateProvider, $urlRouterProvider,$sceDelegateProvider ) {
         $sceDelegateProvider.resourceUrlWhitelist(['**']);
